@@ -11,7 +11,7 @@ that is being used by the application.
 
 [full source here](https://portswigger.net/blog/server-side-template-injection)
 
-#### Give away!
+#### Semi spoiler!
 
 Included [here](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/server-side-template-injection/report.html) is the scan report of a Burp intruder scan on the target. Use this scan report to pinpoint the exact location of the vulnerability.
 

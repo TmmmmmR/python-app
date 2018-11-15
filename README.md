@@ -17,7 +17,7 @@ Riccardo.ten.cate@owasp.org
 
 For the outline we will provide the following topics:
 
-* Server side template injection.
+* [Server side template injection](https://github.com/RiieCco/owasp-bay-area/blob/master/course-guide/server-side-template-injection/ssti.md)
 * Deserialization attack
 * Exploiting CORS misconfiguration
 * External entity attack
