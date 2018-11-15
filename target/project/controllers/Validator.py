@@ -23,7 +23,6 @@ def XML_validator():
         return render_template("validator/index.html", error = "Validation failed")
     
 
-
 @app.route("/validator/getXML", methods=['GET', 'POST'])
 def XML_download():
     fileName = request.form['example_file']
@@ -33,11 +32,9 @@ def XML_download():
     response.headers.set("Content-Disposition", "attachment; filename="+fileName)
     return response
 
-ALLOWED_EXTENSIONS  = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'html'])
-
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+    ALLOWED_EXTENSIONS  = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'html'])
+    return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
 @app.route("/validator/uploads", methods=['GET', 'POST'])
 def XML_upload():

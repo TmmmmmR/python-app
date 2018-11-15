@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#eWFtbDogISFweXRob24vb2JqZWN0L2FwcGx5Om9zLnN5c3RlbSBbInNsZWVwIDEwIl0= || yaml: !!python/object/apply:os.system ["sleep 10"]
+
 from project import app
 from project.models.Dashboard import *
 from flask import render_template, request

@@ -21,3 +21,7 @@ pip3 install -r requirements.txt
 python3 runserver.py
 ```
 
+```
+http://0.0.0.0:8081/dashboard/1
+```
+
