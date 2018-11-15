@@ -72,7 +72,7 @@ def page_not_found(e):
             </div>
 
             <h1 class="page-header">Page not found!</h1>
-            <p> the page you where looking for at <b>{0}</b>, was not found! </p>
+             <pre> the page you where looking for at <b>{0}</b>, was not found! </pre>
             </p>Please follow this link to return to <a href="/dashboard/1" style="color:blue;">home</a>
         </div>
     </div>
@@ -93,4 +93,3 @@ def page_not_found(e):
 </html>
     """.format(request.url)
     return render_template_string(template), 404
-
