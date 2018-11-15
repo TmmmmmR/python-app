@@ -1,0 +1,108 @@
+{% extends "layout/layout.html" %}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+    <h1 class="page-header">XML Validator </h1>
+
+    {% if uploaded %}
+    <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{uploaded}}
+        </div>
+    {% endif %}
+
+    <div class="col-lg-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                        XML validator
+                </div>
+                <div class="panel-body" style="margin-bottom:3%">
+                    <p>
+                    <form method="post" action="/validator/upload">
+                    <textarea name="customers" class="form-control input-lg"></textarea>
+                    <br/>
+                    <button type="submit" class="btn btn-info btn-md" id="btn-chat">
+                            Validate XML
+                        </button>    
+                    </form>
+                </p>
+                </div>
+                <div class="panel-footer">
+                    Hacking challenges
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                            Download XML example template
+                    </div>
+                    <div class="panel-body" style="margin-bottom:5%">
+                        <form action="/validator/getXML" method="post">
+                            <input type="hidden" name="example_file" value="customers.xml"/>
+                        <center>
+                        <button type="submit" style="margin-top:5%" class="btn btn-info btn-circle btn-xl">
+                            <i class="fa fa-download"></i>
+                        </button>
+                    </center>
+                    </form>
+                    </div>
+                    <div class="panel-footer">
+                        Hacking challenges
+                    </div>
+                </div>
+            </div>
+            {% if nodes %}
+            <div class="col-lg-12">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                                A valid XML example!
+                        </div>
+                        <div class="panel-body">
+                           {{nodes}}
+                        </div>
+                        <div class="panel-footer">
+                            Hacking challenges
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                    Upload the XML file
+                            </div>
+                            <div class="panel-body">
+                               Your XML is now ready to be uploaded to the system to add new customers!
+                               <br/><br/>
+                               <form method="post" action="/validator/uploads" enctype="multipart/form-data">
+                                <input type="file" name="file"/><br/>
+                                   <button class="btn btn-primary" type="submit">Submit Button</button>
+                            </div>
+                            <div class="panel-footer">
+                                Hacking challenges
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if error %}
+                <div class="col-lg-12">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                    XML validation error
+                            </div>
+                            <div class="panel-body">
+                               It seems that your XML validation has failed, please refer to the template to see
+                               a valid xml template to upload to the system.
+
+                            </div>
+                            <div class="panel-footer">
+                                Hacking challenges
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+{% endblock %}
+
+
+

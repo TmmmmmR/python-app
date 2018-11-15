@@ -1,0 +1,25 @@
+{% extends "layout/layout.html" %}
+
+{% block title %}Index{% endblock %}
+{% block content %}
+    <h1 class="page-header">Search results</h1>
+
+    <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                        Search results
+                </div>
+                <div class="panel-body">
+                    <p>your search results for: <b>{% autoescape false %}{{search}}{% endautoescape %}</b></p>
+                    <br/>
+                    <h4>There are 0 hits for your search result query</h4>
+                </div>
+                <div class="panel-footer">
+                    Hacking challenges
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+
+
