@@ -17,7 +17,7 @@ You can reach us at:
 
 For the outline we will provide the following topics:
 
-* [Deserialization attack](https://github.com/RiieCco/owasp-bay-area/blob/master/course-guide/server-side-template-injection/ssti.md)
+* [Deserialization attack](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/insecure-deserialization)
 * [Server side template injection](https://github.com/RiieCco/owasp-bay-area/blob/master/course-guide/server-side-template-injection/ssti.md)
 * [Exploiting CORS misconfiguration](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/CORS-misconfiguration)
 * [External entity attack](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/external-entity-attack)
