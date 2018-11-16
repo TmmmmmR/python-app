@@ -17,6 +17,7 @@ def start():
 
 @app.route("/about/sync", methods=['POST'])
 def deserialization_pickle():
+    try:
         with open("../pickle.hacker", "wb+") as file:
             att = request.form['data_obj']
             attack = bytes.fromhex(att)
@@ -26,3 +27,6 @@ def deserialization_pickle():
             a = pickle.load(handle)
             print(attack)
             return render_template("about/index.html", content = a)
+    except:
+        return render_template("about/index.html")
+    return render_template("about/index.html")

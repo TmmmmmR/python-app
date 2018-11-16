@@ -4,6 +4,11 @@ An XML External Entity attack is a type of attack against an application that pa
 
 Attacks can include disclosing local files, which may contain sensitive data such as passwords or private user data, using file: schemes or relative paths in the system identifier. Since the attack occurs relative to the application processing the XML document, an attacker may use this trusted application to pivot to other internal systems, possibly disclosing other internal content via http(s) requests or launching a CSRF attack to any unprotected internal services. In some situations, an XML processor library that is vulnerable to client-side memory corruption issues may be exploited by dereferencing a malicious URI, possibly allowing arbitrary code execution under the application account. Other attacks can access local resources that may not stop returning data, possibly impacting application availability if too many threads or processes are not released.
 
+
+### Objective
+
+* Read a local file from the filesystem by means of the XXE injection (such as /etc/passwd)
+
 #### Discovery
 
 We can discover XXE by looking into the application where XML is being parsed.

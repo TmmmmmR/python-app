@@ -21,6 +21,7 @@ def XML_validator():
                 return render_template("validator/index.html", nodes = nodes)
     except:
         return render_template("validator/index.html", error = "Validation failed")
+    return render_template("validator/index.html", error = "Validation failed")
     
 
 @app.route("/validator/getXML", methods=['GET', 'POST'])

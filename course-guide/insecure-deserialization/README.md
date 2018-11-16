@@ -3,6 +3,11 @@
 Serialization is the process of turning some object into a data format that can be restored later. People often serialize objects in order to save them to storage, or to send as part of communications. Deserialization is the reverse of that process -- taking data structured from some format, and rebuilding it into an object. Today, the most popular data format for serializing data is JSON. Before that, it was XML.
 
 
+### Objective 
+
+* Use template injection to read the flask "configurations" such as the secret for signing JWT tokens
+* Use template injection to envoke a local function to leverage RCE
+
 #### spoiler 1 - discovery
 
 There are a lot of ways to do your reconnaissance when performing a penetration test.

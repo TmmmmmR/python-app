@@ -6,6 +6,10 @@ We find a lot of vulnerabilities these days that have CORS misconfigured.
 This misconfiguration allows to make XHR get requests on an authenticated users behalf
 and steal sensitive information from the server!
 
+### Objectives
+
+* Read sensitive information from the "/confidential" page by means of exploiting the misconfigured CORS settings
+
 #### The issue?
 
 Rather than explaining myself please refer to the following blog to read all about the 

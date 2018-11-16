@@ -1,7 +1,5 @@
 # Server side template injection
 
-#### What is it in a nutshell?
-
 This is the course guide for server-side template injection.
 
 Template engines are widely used by web applications to present dynamic data via web pages and emails. Unsafely embedding user input in templates enables Server-Side Template Injection, a frequently critical vulnerability that is extremely easy to mistake for Cross-Site Scripting (XSS), or miss entirely. Unlike XSS, Template Injection can be used to directly attack web servers' internals and often obtain Remote Code Execution (RCE), turning every vulnerable application into a potential pivot point.
@@ -10,6 +8,11 @@ Follow the full source to find how to discover this vulnerability and how to det
 that is being used by the application.
 
 [full source here](https://portswigger.net/blog/server-side-template-injection)
+
+### Objective 
+
+* Use template injection to read the flask "configurations" such as the secret for signing JWT tokens
+* Use template injection to envoke a local function to leverage RCE
 
 #### Semi spoiler!
 
