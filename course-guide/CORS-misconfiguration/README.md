@@ -16,7 +16,7 @@ The source is found [here](https://portswigger.net/blog/exploiting-cors-misconfi
 
 ### Spoiler 1 - discovery
 
-You can find this link after loggin in with either:
+You can find the vulnerable link after loggin in with either:
 
 ```
 link: http://0.0.0.0:8081/login

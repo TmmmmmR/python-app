@@ -11,8 +11,8 @@ We will provide the slides after the session and are always ready to help!
 
 You can reach us at:
 
-Glenn.ten.cate@owasp.org
-Riccardo.ten.cate@owasp.org
+* Glenn.ten.cate@owasp.org
+* Riccardo.ten.cate@owasp.org
 
 
 For the outline we will provide the following topics:

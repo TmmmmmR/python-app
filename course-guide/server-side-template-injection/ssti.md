@@ -53,6 +53,15 @@ try to inject:
 {{ config.items() }}
 ```
 
+Here we find al the different configurations of the target. Amongst others we find the 
+
+```
+('SECRET_KEY', 'random')
+```
+
+This key is used to sign the JWT tokens and can iie be used to gain unauthorized access to the
+application.
+
 #### Spoiler - exploitation of the target.
 
 The developer of this application thought it was a good idea to have a generic function for his
