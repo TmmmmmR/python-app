@@ -1,4 +1,4 @@
-# Course outline OWASP Bay Area 
+# Course outline advanced appsec!
 
 Hello everybody and welcome to this offensive workshop for the OWASP Bay Area!
 This file contains the outline for the course.
