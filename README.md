@@ -9,7 +9,7 @@ on how to do recoginsance to discover the vulnerability, and also how to build y
 Do not worry if you do not manage to find al the exploits during the course.
 We will provide the slides after the session and are always ready to help!
 
-You can reach us at:
+You can reach me at:
 
 * Riccardo.ten.cate@owasp.org
 
