@@ -20,5 +20,5 @@ def login():
         if(password != "admin" or username == "admin"):
             return render_template("login/index.html", error = "invalid password for username")
     else:
-        return render_template("login/index.html")
+        return render_template("login/index.html", error = "")
     
