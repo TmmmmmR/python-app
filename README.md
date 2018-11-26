@@ -21,7 +21,3 @@ For the outline we will provide the following topics:
 * [Exploiting CORS misconfiguration](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/CORS-misconfiguration)
 
 
-
-
-
-
