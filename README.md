@@ -21,7 +21,13 @@ For the outline we will provide the following topics:
 * [Exploiting CORS misconfiguration](https://github.com/RiieCco/owasp-bay-area/tree/master/course-guide/CORS-misconfiguration)
 
 
+## Running with Docker?
 
+```
+docker pull rtencatexebia/workshop
+docker run -p8081:80181 rtencatexebia/workshop
+```
 
+the app now greets you on.
 
-
+http://0.0.0.0:8081
